@@ -38,7 +38,7 @@ def main():
     opt = parser.parse_args()
         
     file = ROOT.TFile(opt.input)
-    tree = file.Get("PUAnalyzer/Trees/Events")
+    tree = file.Get("analyzer1/Trees/Events")
 
     out_file_name , _ = os.path.splitext( os.path.basename(opt.input) )
     hdf5_file = h5py.File( './{0}.h5'.format(out_file_name) , "w")

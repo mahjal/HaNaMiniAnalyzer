@@ -13,6 +13,7 @@ PackedCandidateReader::PackedCandidateReader( edm::ParameterSet const& iPS, edm:
   memset(dxy, 0, sizeof(dxy));
   memset(dz, 0, sizeof(dz));
   memset(type, 0, sizeof(type));
+  memset(vertexKey, 0, sizeof(vertexKey));
 
 }
 
@@ -44,6 +45,8 @@ double PackedCandidateReader::Read( const edm::Event& iEvent ){
     dxy[nParticles] = cand.dxy();
     dz[nParticles] = cand.dz();
     type[nParticles] = cand.pdgId();
+
+    vertexKey[nParticles] = cand.vertexRef().key();
 
     nParticles++;
   }

@@ -30,6 +30,7 @@ class PackedCandidateReader : public BaseEventReader< pat::PackedCandidateCollec
   int nNeutralHadrons;
   int nPhotons;
   int nParticles;
+  int vertexKey[MAX_Particles];
 
   int size() const {
     return handle->size();

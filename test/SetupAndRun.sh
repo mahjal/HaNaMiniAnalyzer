@@ -12,7 +12,7 @@ eval `scramv1 runtime -sh`
 
 mkdir Haamm/
 cd Haamm
-git clone -b $4 https://github.com/masoumehtavakoli/HaNaMiniAnalyzer.git
+git clone -b $4 https://github.com/mahjal/HaNaMiniAnalyzer.git
 cd HaNaMiniAnalyzer/
 git checkout $4
 scram b

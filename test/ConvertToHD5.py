@@ -38,7 +38,7 @@ def main():
     opt = parser.parse_args()
         
     file = ROOT.TFile(opt.input)
-    tree = file.Get("analyzer1/Trees/Events")
+    tree = file.Get("PUAnalyzer/Trees/Events")
 
     out_file_name , _ = os.path.splitext( os.path.basename(opt.input) )
     hdf5_file = h5py.File( './{0}.h5'.format(out_file_name) , "w")
@@ -60,6 +60,7 @@ def main():
         eta = torch.tensor(tree.Eta, dtype=torch.float32)
         Type = torch.tensor(tree.Type, dtype=torch.int32)
         charge = torch.tensor(tree.Charge, dtype=torch.int32)
+        vertexKey = torch.tensor(tree.vertexKey, dtype=torch.int32)
 
         # Collect attributes for events
         nVertices = torch.tensor([tree.nVertices], dtype=torch.int32)
@@ -68,7 +69,7 @@ def main():
         # node_features = torch.stack((phi, charge, energy, p, pt, dz, dxy, eta, Type), dim=1)
         # graph_attr = torch.stack((nVertices, nVGoodVertices), dim=0)
 
-        node_features = torch.stack((phi, pt, dz, dxy, eta, Type , charge , energy , p), dim=1)
+        node_features = torch.stack((phi, pt, dz, dxy, eta, Type , charge , energy , p , vertexKey), dim=1)
         graph_attr = torch.stack((nVertices,), dim=0)
 
         edge_index , edge_attr = GetEdgeInfo(eta , phi , opt.maxDR)

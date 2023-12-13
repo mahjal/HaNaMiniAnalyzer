@@ -1,7 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
 
-
 # Give the process a name
 process = cms.Process("HaNa")
 
@@ -48,7 +47,6 @@ options.register('sample', 'SimMiniAOD22', opts.VarParsing.multiplicity.singleto
 options.register('job', 0, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int , "number of the job")
 options.register('nFilesPerJob', 1, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int , "number of the files pre job") 
 options.register('output', "out", opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string , "could be root://afs/cern.ch/user/m/mjalalva/eos/cms/store/out")
-#root://eoscms//eos/cms/store/user/hbakhshi/out
 
 options.parseArguments()
 
@@ -76,4 +74,3 @@ process.TFileService.fileName = job.Output
 process.maxEvents.input = options.maxEvents
 
 process.p = cms.Path( process.PUAnalyzer )
-

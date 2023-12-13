@@ -46,7 +46,8 @@ options = opts.VarParsing ('analysis')
 options.register('sample', 'SimMiniAOD22', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, 'Sample to analyze')
 options.register('job', 0, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int , "number of the job")
 options.register('nFilesPerJob', 1, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int , "number of the files pre job") 
-options.register('output', "out", opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string , "could be root://eoscms//eos/cms/store/user/hbakhshi/out")
+options.register('output', "out", opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string , "could be root://afs/cern.ch/user/m/mjalalva/eos/cms/store/out")
+#root://eoscms//eos/cms/store/user/hbakhshi/out
 
 options.parseArguments()
 

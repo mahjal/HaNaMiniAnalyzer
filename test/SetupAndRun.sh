@@ -4,6 +4,7 @@ export X509_USER_PROXY=$1
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 voms-proxy-info
 
+/cvmfs/cms.cern.ch/common/cmssw-el7
 export SCRAM_ARCH=$2
 scramv1 project CMSSW $3
 cd $3/src/
@@ -41,7 +42,7 @@ ls -l $outfilenames
 eval `scram unsetenv -sh`
 source /cvmfs/sft.cern.ch/lcg/views/LCG_102b_cuda/x86_64-centos7-gcc8-opt/setup.sh
 
-./ConvertToHD5.py --input $outfilenames
+./ConvertToHeteroH5.py --input $outfilenames
 #python3 main_script.py -R $outfilenames
 
 rm -f $outfilenames

@@ -14,6 +14,8 @@ PackedCandidateReader::PackedCandidateReader( edm::ParameterSet const& iPS, edm:
   memset(dz, 0, sizeof(dz));
   memset(type, 0, sizeof(type));
   memset(vertexKey, 0, sizeof(vertexKey));
+  memset(dzAssociatedPV, 0, sizeof(dzAssociatedPV));
+
 
 }
 
@@ -47,6 +49,7 @@ double PackedCandidateReader::Read( const edm::Event& iEvent ){
     type[nParticles] = cand.pdgId();
 
     vertexKey[nParticles] = cand.vertexRef().key();
+    dzAssociatedPV[nParticles] = cand.dzAssociatedPV() ;
 
     nParticles++;
   }

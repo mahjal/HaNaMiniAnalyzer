@@ -11,7 +11,9 @@ if not len(sys.argv) == 3 :
 prefix = "out"
 #OutPath = "/%s/%s/" % (sys.argv[2], user )
 #OutPath = "/eos/cms/store/user/%s/%s/" % (user, sys.argv[2] )
-OutPath = "/eos/home-m/mjalalva/newRun1"
+OutPath = "/eos/home-m/mjalalva/Hetero"
+
+/cvmfs/cms.cern.ch/common/cmssw-el7
 
 from SamplesPU.Samples import MINIAOD22 as samples
 for sample in samples:
@@ -26,7 +28,7 @@ while os.path.isdir( "./%s" % (workingdir) ):
 os.mkdir( workingdir )
 
 from subprocess import call
-call(["voms-proxy-init" , "--out" , "./%s/.x509up_u%d" % ( workingdir , os.getuid()) , "--voms" , "cms" , "--valid" , "1000:0"])
+call(["voms-proxy-init" , "--out" , "./%s/.x509up_u%d" % ( workingdir , os.getuid()) , "--voms" , "cms" , "--valid" , "192:0"])
 
 
 file_sh = open("%s/Submit.sh" % (workingdir) , "w" )

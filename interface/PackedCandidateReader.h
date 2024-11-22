@@ -22,6 +22,7 @@ class PackedCandidateReader : public BaseEventReader< pat::PackedCandidateCollec
   float Phi [MAX_Particles];
   float dxy [MAX_Particles];
   float dz [MAX_Particles];
+  float dzAssociatedPV [MAX_Particles];
   int type[MAX_Particles];
   int Charge [MAX_Particles];
   int nEles;

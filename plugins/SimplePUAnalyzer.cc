@@ -53,7 +53,7 @@ public:
     theTree->Branch("nInt50ns" , &(vertexReader->npv50ns) );
 
     theTree->Branch("vertexKey" , &packedReader->vertexKey , "vertexKey[nParticles]/I");
-
+    theTree->Branch("dzAssociatedPV" , &packedReader->dzAssociatedPV , "dzAssociatedPV[nParticles]/F");
 
   };
   virtual void analyze(const edm::Event& iEvent, const edm::EventSetup&) override{

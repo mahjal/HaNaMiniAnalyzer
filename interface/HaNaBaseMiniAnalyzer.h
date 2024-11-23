@@ -6,8 +6,8 @@
 
 // user include files
 #include "FWCore/Framework/interface/Frameworkfwd.h"
-#include "FWCore/Framework/interface/EDAnalyzer.h"
-
+//#include "FWCore/Framework/interface/EDAnalyzer.h"
+#include "FWCore/Framework/interface/one/EDAnalyzer.h"
 #include "FWCore/Framework/interface/LuminosityBlock.h"
 #include "FWCore/Framework/interface/Event.h"
 #include "FWCore/Framework/interface/MakerMacros.h"
@@ -31,8 +31,10 @@
 using namespace edm;
 using namespace std;
 //using namespace pat;
+//#include "FWCore/Framework/interface/one/EDAnalyzer.h"  // If using one::EDAnalyzer
+class HaNaBaseMiniAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources> {
 
-class HaNaBaseMiniAnalyzer : public edm::one::EDAnalyzer<edm::one::WatchLuminosityBlocks> {
+  //class HaNaBaseMiniAnalyzer : public edm::one::EDAnalyzer<edm::one::WatchLuminosityBlocks> {
 public:
   explicit HaNaBaseMiniAnalyzer(const edm::ParameterSet&);
   ~HaNaBaseMiniAnalyzer();
@@ -43,8 +45,8 @@ protected:
   virtual void analyze(const edm::Event&, const edm::EventSetup&) override;
   virtual void endJob() override;
 
-  virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override{};
-  virtual void endLuminosityBlock(edm::LuminosityBlock const&,edm::EventSetup const&) override{};
+  //  virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override{};
+  //  virtual void endLuminosityBlock(edm::LuminosityBlock const&,edm::EventSetup const&) override{};
 
   // virtual void beginLuminosityBlock(LuminosityBlock const &, EventSetup const &) override {};
   // virtual void endLuminosityBlock(LuminosityBlock const &, EventSetup const &) override {};

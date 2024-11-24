@@ -1,3 +1,4 @@
+
 #ifndef BaseEventReader_H
 #define BaseEventReader_H
 

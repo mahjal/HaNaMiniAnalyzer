@@ -1,3 +1,4 @@
+
 #include "Haamm/HaNaMiniAnalyzer/interface/PackedCandidateReader.h"
 
 PackedCandidateReader::PackedCandidateReader( edm::ParameterSet const& iPS, edm::ConsumesCollector && iC) :

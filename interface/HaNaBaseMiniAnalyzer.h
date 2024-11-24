@@ -1,3 +1,4 @@
+
 #ifndef HaNaBaseMiniAnalyzer_H
 #define HaNaBaseMiniAnalyzer_H
 

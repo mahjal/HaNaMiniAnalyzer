@@ -1,4 +1,4 @@
-#65;6003;1c 
+
 from Haamm.HaNaMiniAnalyzer.Sample import *
 
 import os
@@ -54,3 +54,7 @@ ZeroBias22G = Sample("ZeroBias22G" , 0 , False , "/ZeroBias/Run2022G-PromptReco-
 SimMiniAod = Sample("SimMiniAOD22" , 1 , False , "/SingleNeutrino_E-10-gun/Run3Winter22MiniAOD-L1TPU0to99FEVT_SNB_122X_mcRun3_2021_realistic_v9-v2/MINIAODSIM")
 
 MINIAOD22.extend( [SimMiniAod] )
+
+#SimMiniAod = Sample("SimMiniAOD22" , 1 , False , "/SingleNeutrino_E-10-gun/Run3Winter22MiniAOD-L1TPU0to99FEVT_SNB_122X_mcRun3_2021_realistic_v9-v2/MINIAODSIM")
+#SimMiniAod = Sample("SimMiniAOD24", 1, False, "/SingleNeutrino_E-10-gun/Run3Winter24MiniAOD-133X_mcRun3_2024_realistic_v10-v2/MINIAODSIM")
+M

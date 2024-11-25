@@ -15,16 +15,9 @@ process.TFileService = cms.Service("TFileService", fileName = cms.string("simepl
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(20000))
 
 # Tell the process which files to use as the source
-#process.source = cms.Source("PoolSource",
-    # replace 'myfile.root' with the source file you want to use
-#                           fileNames = cms.untracked.vstring()
-
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring(
-        "root://cms-xrd-global.cern.ch//store/mc/Run3Summer21MiniAOD/SingleNeutrino_E-10-gun/MINIAODSIM/SNB_120X_mcRun3_2021_realistic_v5-v2/file1.root",
-        "root://cms-xrd-global.cern.ch//store/mc/Run3Summer21MiniAOD/SingleNeutrino_E-10-gun/MINIAODSIM/SNB_120X_mcRun3_2021_realistic_v5-v2/file2.root",
-        # Add more files as needed
-    )
+    # replace 'myfile.root' with the source file you want to use
+                            fileNames = cms.untracked.vstring()
 )
 
 # Tell the process what filename to use to save the output
@@ -50,10 +43,10 @@ process.analyzer1  = cms.EDAnalyzer('SimplePUAnalyzer',
 
 import FWCore.ParameterSet.VarParsing as opts
 options = opts.VarParsing ('analysis') 
-options.register('sample', 'SimMiniAOD22', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, 'Sample to analyze')
+options.register('sample', 'SimMiniAOD21', opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string, 'Sample to analyze')
 options.register('job', 0, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int , "number of the job")
 options.register('nFilesPerJob', 1, opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.int , "number of the files pre job") 
-options.register('output', "out", opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string , "could be root://eoscms//eos/cms/store/user/hbakhshi/out")
+options.register('output', "out", opts.VarParsing.multiplicity.singleton, opts.VarParsing.varType.string , "could be root://eoscms//afs/cern.ch/user/m/mjalalva/eos/Hetero")
 
 options.parseArguments()
 

@@ -15,9 +15,16 @@ process.TFileService = cms.Service("TFileService", fileName = cms.string("simepl
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(20000))
 
 # Tell the process which files to use as the source
-process.source = cms.Source("PoolSource",
+#process.source = cms.Source("PoolSource",
     # replace 'myfile.root' with the source file you want to use
-                            fileNames = cms.untracked.vstring()
+#                           fileNames = cms.untracked.vstring()
+
+process.source = cms.Source("PoolSource",
+    fileNames = cms.untracked.vstring(
+        "root://cms-xrd-global.cern.ch//store/mc/Run3Summer21MiniAOD/SingleNeutrino_E-10-gun/MINIAODSIM/SNB_120X_mcRun3_2021_realistic_v5-v2/file1.root",
+        "root://cms-xrd-global.cern.ch//store/mc/Run3Summer21MiniAOD/SingleNeutrino_E-10-gun/MINIAODSIM/SNB_120X_mcRun3_2021_realistic_v5-v2/file2.root",
+        # Add more files as needed
+    )
 )
 
 # Tell the process what filename to use to save the output

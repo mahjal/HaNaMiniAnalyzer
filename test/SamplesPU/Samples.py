@@ -56,7 +56,7 @@ SingleNeutrinos = []
 
 #SimMiniAod = Sample("SimMiniAOD22" , 1 , False , "/SingleNeutrino_E-10-gun/Run3Winter22MiniAOD-L1TPU0to99FEVT_SNB_122X_mcRun3_2021_realistic_v9-v2/MINIAODSIM")
 ######
-SimMiniAod = Sample("SimMiniAOD22" , 1 , False , "/Run3Winter24MiniAOD/SingleNeutrino_E-10-gun/MINIAODSIM/133X_mcRun3_2024_realistic_v9-v3")
+SimMiniAod = Sample("SimMiniAOD22" , 1 , False , "/eos/opendata/cms/mc/RunIIFall15MiniAODv2/SingleNeutrino/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1")
                                                   
 ######
 MINIAOD22.extend( [SimMiniAod] )

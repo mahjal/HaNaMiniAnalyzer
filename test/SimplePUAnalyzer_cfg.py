@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 import FWCore.ParameterSet.VarParsing as opts
 import os
-from SamplesPU.Samples import MINIAOD22 as samples  # Adjust import based on your setup
+from SamplesPU.Samples import MINIAOD22 as samples  
 
 # Initialize the process
 process = cms.Process("HaNa")
